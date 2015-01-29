@@ -1,16 +1,16 @@
 var ApplePay = function() {};
 
-ApplePay.prototype.GenericSuccessCallback = function(response) {
+ApplePay.GenericSuccessCallback = function(response) {
     console.log('Success');
     console.log(response);
 };
 
-ApplePay.prototype.GenericFailureCallback = function(response) {
+ApplePay.GenericFailureCallback = function(response) {
     console.log('Failure');
     console.log(response);
 };
 
-ApplePay.prototype.setMerchantId = function(merchantId, SuccessCallback, FailureCallback) {
+ApplePay.setMerchantId = function(merchantId, SuccessCallback, FailureCallback) {
     console.log('setMerchantId');
     if (SuccessCallback && FailureCallback) {
         cordova.exec(SuccessCallback, FailureCallback, 'ApplePay', 'setMerchantId', [merchantId]);
@@ -19,7 +19,7 @@ ApplePay.prototype.setMerchantId = function(merchantId, SuccessCallback, Failure
     }
 };
 
-ApplePay.prototype.makePaymentRequest = function(order, SuccessCallback, FailureCallback) {
+ApplePay.makePaymentRequest = function(order, SuccessCallback, FailureCallback) {
     console.log('makePaymentRequest');
     if (SuccessCallback && FailureCallback) {
         cordova.exec(SuccessCallback, FailureCallback, 'ApplePay', 'makePaymentRequest', [order]);
@@ -28,5 +28,5 @@ ApplePay.prototype.makePaymentRequest = function(order, SuccessCallback, Failure
     }
 };
 
-var ApplePay = new AdTheorentManager();
-module.exports = ApplePayApplePay;
+var ApplePay = new ApplePay();
+module.exports = ApplePay;

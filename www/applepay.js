@@ -1,11 +1,11 @@
 var ApplePay = function() {};
 
-ApplePay.prototype.GenericSuccessCallback = function(response) {
+ApplePay.GenericSuccessCallback = function(response) {
     console.log('Success');
     console.log(response);
 };
 
-ApplePay.prototype.GenericFailureCallback = function(response) {
+ApplePay.GenericFailureCallback = function(response) {
     console.log('Failure');
     console.log(response);
 };
@@ -28,5 +28,5 @@ ApplePay.prototype.makePaymentRequest: function(order, SuccessCallback, FailureC
     }
 };
 
-var ApplePay = new AdTheorentManager();
+var ApplePay = new ApplePay();
 module.exports = ApplePayApplePay;

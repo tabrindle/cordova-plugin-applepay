@@ -1,11 +1,5 @@
-# org.beuckman.applepay
 
-This plugin is to give an idea of what ApplePay will probably look like. Thanks to Max Mamis for [this blog post](http://prolificinteractive.com/blog/2014/09/19/apple-pay-developers/).
-
-
-## Installation
-
-cordova plugin add https://github.com/jbeuckm/cordova-plugin-applepay.git
+cordova plugin add https://github.com/tabrindle/cordova-plugin-applepay.git
 
 ## Supported Platforms
 
@@ -18,40 +12,24 @@ cordova plugin add https://github.com/jbeuckm/cordova-plugin-applepay.git
 
 ## ApplePay.setMerchantId
 
-Set your Apple-given merchant ID.
+Set your merchant ID from Apple.
 
 	ApplePay.setMerchantId("merchant.my.id");
 
 ## ApplePay.makePaymentRequest
 
-Request a payment with Apple Pay.
+Request a payment with ApplePay.
 
-    ApplePay.makePaymentRequest(successCallback, errorCallback, order);
+    ApplePay.makePaymentRequest(order, [successCallback], [errorCallback]);
 
-### Parameters
-
-- __order.items__: Array of item objects with form ```{ label: "Item 1", amount: 1.11 }```
-- __order.shippingMethods__: Array of item objects with form ```{ identifier: "My Method", detail: "Ship by method 1", amount: 1.11 }```
 
 ### Example
 
-	ApplePay.setMerchantId("merchant.apple.test");
-    
-    function onError(err) {
-        alert(JSON.stringify(err));
-    }
-    function onSuccess(response) {
-        alert(response);
-    }
+	ApplePay.setMerchantId("merchant.com.marketamerica.shopapp");
 	 
-    ApplePay.makePaymentRequest(onSuccess, onError, {
-    	items: [
-	        { label: "item 1", amount: 1.11 },
-	        { label: "item 2", amount: 2.22 }
-	    ],
-	    shippingMethods: [
-	    	{ identifier: "By Sea", detail: "Shipmates on a ship.", amount: 1.11 },
-	    	{ identifier: "Airmail", detail: "Ship it by airplane.", amount: 5.55 }
-	    ]
-	);
+    ApplePay.makePaymentRequest({
+    	price: '19.99',
+        prodID: '234234232',
+        quantity: '2'
+	});
 

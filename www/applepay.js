@@ -22,9 +22,9 @@ ApplePay.prototype.setMerchantId = function(merchantId, SuccessCallback, Failure
 ApplePay.prototype.makePaymentRequest = function(order, SuccessCallback, FailureCallback) {
     console.log('makePaymentRequest');
     if (SuccessCallback && FailureCallback) {
-        cordova.exec(SuccessCallback, FailureCallback, 'ApplePay', 'makePaymentRequest', [order]);
+        cordova.exec(SuccessCallback, FailureCallback, 'ApplePay', 'makePaymentRequest', [order.price, order.prodID, order.quantity]);
     } else {
-        cordova.exec(ApplePay.GenericSuccessCallback, ApplePay.GenericFailureCallback, 'ApplePay', 'makePaymentRequest', [order]);
+        cordova.exec(ApplePay.GenericSuccessCallback, ApplePay.GenericFailureCallback, 'ApplePay', 'makePaymentRequest', [order.price, order.prodID, order.quantity]);
     }
 };
 

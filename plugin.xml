@@ -2,8 +2,11 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.ma.applepay" version="1.0.0">
     <name>ApplePay</name>
     <description>Implements ApplePay request.</description>
+    <engines>
+        <engine name="cordova" version=">=3.5" />
+    </engines>
     <platform name="ios">
-        <js-module src="www/applepay.js" name="payment">
+        <js-module src="www/applepay.js" name="applepay">
             <clobbers target="ApplePay" />
         </js-module>
         <framework src="PassKit.framework" />

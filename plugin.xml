@@ -3,7 +3,7 @@
     <name>ApplePay</name>
     <description>Implements ApplePay request.</description>
     <engines>
-        <engine name="cordova" version=">=3.5" />
+        <engine name="cordova" version=">=3.4" />
     </engines>
     <platform name="ios">
         <js-module src="www/applepay.js" name="applepay">

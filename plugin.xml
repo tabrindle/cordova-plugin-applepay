@@ -12,6 +12,9 @@
         <framework src="PassKit.framework" />
         <header-file src="src/ios/CDVApplePay.h" />
         <source-file src="src/ios/CDVApplePay.m" />
+        <framework src="src/ios/InAppSDK.framework" custom="true" />
+        <framework src="src/ios/MockAcadiaAPIs.framework" custom="true" />
+        <framework src="src/ios/PayeezyClient.framework" custom="true" />
         <config-file target="config.xml" parent="/*">
             <feature name="ApplePay">
                 <param name="ios-package" value="CDVApplePay" />
